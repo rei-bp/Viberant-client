@@ -1,7 +1,8 @@
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 
@@ -21,7 +22,15 @@ function App() {
 
   // function to log the user out
   const handleLogout = () => {
-    console.log('log the user out!')
+    // delete the jwt that's in local storage
+    if(localStorage.getItem('jwtToken')) {
+      localStorage.removeItem('jwtToken')
+
+      // set the user in state to be null
+      setCurrentUser(null)
+
+    }
+
   }
 
   return (
@@ -52,10 +61,10 @@ function App() {
             render={ props => <Login {...props} currentUser={ currentUser } setCurrentUser={ setCurrentUser } /> }
           />
 
-          {/* eventually do a conditional render here */}
+          {/* conditionally render a redirect for auth locked routes */}
           <Route
             path="/profile"
-            render={ props => <Profile {...props} currentUser={ currentUser } setCurrentUser={ setCurrentUser } /> }
+            render={ props => currentUser ? <Profile {...props} currentUser={ currentUser } handleLogout={ handleLogout } /> : <Redirect to='/login' /> }
           />
 
         </Switch>
