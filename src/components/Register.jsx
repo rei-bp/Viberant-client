@@ -50,6 +50,7 @@ const Register = (props) => {
     }
 
     // redirect if the user is logged in
+    if(props.currentUser) return <Redirect to="/profile" component={Profile} currentUser={props.currentUser} />
 
     return (
         <div>
