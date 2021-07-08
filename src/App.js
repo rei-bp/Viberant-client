@@ -5,6 +5,7 @@ import {
   Redirect
 } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
+import jwt from 'jsonwebtoken'
 
 import './App.css';
 import Navbar from './components/Navbar'
@@ -18,7 +19,19 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null)
 
   // if user navigates away automatically log them in (if the jwt is valid)
-  useEffect(() => {})
+  useEffect(() => {
+    // get the token from local storage
+    const token = localStorage.getItem('jwtToken')
+
+    // if check for token
+    if(token) {
+      setCurrentUser(jwt.decode(token))
+    } else {
+      // else set user in state to be null
+      setCurrentUser(null)
+    }
+
+  }, [])
 
   // function to log the user out
   const handleLogout = () => {
