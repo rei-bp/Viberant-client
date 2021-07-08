@@ -1,12 +1,9 @@
 import { Link } from 'react-router-dom'
 
 const Navbar = (props) => {
-    return (
-        <nav>
-            <Link to="/">
-                Home
-            </Link>
-
+    // if the user is logged in
+    const loggedIn = (
+        <>
             {/* If the user is logged in */}
             <Link to="/profile">
                 Profile
@@ -15,7 +12,12 @@ const Navbar = (props) => {
             <Link to="/">
                 <span onClick={props.handleLogout}>Logout</span>
             </Link>
+        </>
+    )
 
+    // if the user is logged out
+    const loggedOut = (
+        <>
             {/* If the user is logged out */}
             <Link to="/login">
                 Login
@@ -24,7 +26,16 @@ const Navbar = (props) => {
             <Link to="/register">
                 Register
             </Link>
+        </>
+    )
 
+    return (
+        <nav>
+            <Link to="/">
+                Home
+            </Link>
+
+            {props.currentUser ? loggedIn : loggedOut}
         </nav>
     )
 }
