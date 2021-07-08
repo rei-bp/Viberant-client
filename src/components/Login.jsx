@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import jwt from 'jsonwebtoken'
-import { Redirect } from 'react-router'
+import { Redirect } from 'react-router-dom'
 import Profile from './Profile'
 
 const Login = (props) => {
@@ -37,7 +37,7 @@ const Login = (props) => {
             props.setCurrentUser(decoded)
 
         } catch (error) {
-            if(error.response.status == 400) {
+            if(error.response.status === 400) {
                 setMessage(error.response.data.msg)
             } else {
                 console.log(error)
