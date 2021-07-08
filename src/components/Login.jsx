@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import axios from 'axios'
 import jwt from 'jsonwebtoken'
-import { fixRequestBody } from 'http-proxy-middleware'
+import { Redirect } from 'react-router'
+import Profile from './Profile'
 
-const Login = () => {
+const Login = (props) => {
     // state for the controlled form
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -23,11 +24,28 @@ const Login = () => {
             const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/login`, requestBody)
             
             console.log(response)
+            // destrcuture the response
+            const { token } = response.data
+            
             // save the response to localstorage
+            localStorage.setItem('jwtToken', token)
+
+            // decode the jwt token before we put it in state
+            const decoded = jwt.decode(token)
+
+            // set the user in App.js' state
+            props.setCurrentUser(decoded)
+
         } catch (error) {
-            console.log(error)
+            if(error.response.status == 400) {
+                setMessage(error.response.data.msg)
+            } else {
+                console.log(error)
+            }
         }
     }
+
+    if(props.currentUser) return <Redirect to='/profile' component={ Profile } currentUser={ props.currentUser } />
 
     return (
         <div>
