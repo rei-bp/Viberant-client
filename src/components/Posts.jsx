@@ -3,9 +3,11 @@ const Posts = () => {
 
     return (
         <div>
-            I will display all the posts
+            <h1>I will display all the post!</h1>
+            
             Title,
             Date,
+            Address,
             Content
 
             tags? 
