@@ -165,12 +165,10 @@ const Wrapper = styled.div `
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 10px;
+    margin: 30px;
     height: 100px;
     width: 100px;
     padding: 15px;
-    ${'' /* height: 100px;
-    width: 100px; */}
 `
 
 const PImage = styled.div `
