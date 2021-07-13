@@ -1,8 +1,6 @@
 import { useState, useEffect} from 'react'
 import axios from 'axios'
 
-
-
 const Posts = () => {
     const [post, setPost] = useState([])
 // map through the POST DB to display all posts with specific tags
