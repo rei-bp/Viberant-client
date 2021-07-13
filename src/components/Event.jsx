@@ -177,7 +177,7 @@ const PName = styled.div `
     font-size: 12px;
 `
 
-export default function Event () {
+const Event = () => {
     return (
         <EventComponent className='container'>
                 <EventTitle>Event Name</EventTitle>
@@ -260,3 +260,5 @@ export default function Event () {
         </EventComponent>
     )
 }
+
+export default Event
