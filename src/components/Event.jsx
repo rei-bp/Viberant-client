@@ -163,8 +163,6 @@ const Wrapper = styled.div `
     align-items: center;
     text-align: center;
     margin: 30px;
-    ${'' /* height: 100px;
-    width: 100px; */}
 `
 
 const PImage = styled.div `

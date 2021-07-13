@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import jwt from 'jsonwebtoken'
+import axios from 'axios'
 
 import './App.css';
 import Navbar from './components/Navbar'
@@ -19,6 +20,7 @@ import Footer from './components/Footer'
 function App() {
   // state holds user data if the user is logged in
   const [currentUser, setCurrentUser] = useState(null)
+
 
   // if user navigates away automatically log them in (if the jwt is valid)
   useEffect(() => {
@@ -34,6 +36,9 @@ function App() {
     }
 
   }, [])
+
+ 
+  
 
   // function to log the user out
   const handleLogout = () => {
@@ -86,7 +91,7 @@ function App() {
 
 
           <Route
-            path="/event"
+            path="/event/:id"
             render={ props => 
               <Event {...props} />
             }
