@@ -13,6 +13,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import Profile from './components/Profile'
 import Welcome from './components/Welcome'
+import Search from './components/Search'
 import Posts from './components/Posts'
 
 function App() {
@@ -56,6 +57,8 @@ function App() {
           handleLogout={ handleLogout }
         />
       </header>
+
+      <Search />
 
       <div className="App">
         <Switch>
