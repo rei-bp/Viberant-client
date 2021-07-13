@@ -122,6 +122,42 @@ const Tags = styled.div `
 
 //ANDIE WORK HERE
 const Participants = styled.div `
+    background-color: #DFF3FA;
+    height: 450px;
+    width: 335px;
+`
+
+const ParticipantsTitle = styled.div `
+    font-size: 14px;
+    font-weight: bold;
+    padding: 20px 0px;
+    background-color: #C6F1FF;
+`
+
+const PersonContainer = styled.div `
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+`
+
+const Wrapper = styled.div `
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 30px;
+    ${'' /* height: 100px;
+    width: 100px; */}
+`
+
+const PImage = styled.div `
+    background-color: black;
+    border-radius: 50%;
+    height: 50px;
+    weight: 50px;
+`
+const PName = styled.div `
+    font-size: 12px;
 `
 
 export default function Event () {
@@ -150,7 +186,47 @@ export default function Event () {
                     <JoinButton>JOIN THIS EVENT</JoinButton>
 
                     <Tags></Tags>
-                    <Participants></Participants>
+                    <Participants>
+                        <ParticipantsTitle>participants 9/12 </ParticipantsTitle>
+                        <PersonContainer>
+                            <Wrapper>
+                                <PImage></PImage>
+                                <PName>Person</PName>
+                            </Wrapper>
+                            <Wrapper>
+                                <PImage></PImage>
+                                <PName>Person</PName>
+                            </Wrapper>
+                            <Wrapper>
+                                <PImage></PImage>
+                                <PName>Person</PName>
+                            </Wrapper>
+                            <Wrapper>
+                                <PImage></PImage>
+                                <PName>Person</PName>
+                            </Wrapper>
+                            <Wrapper>
+                                <PImage></PImage>
+                                <PName>Person</PName>
+                            </Wrapper>
+                            <Wrapper>
+                                <PImage></PImage>
+                                <PName>Person</PName>
+                            </Wrapper>
+                            <Wrapper>
+                                <PImage></PImage>
+                                <PName>Person</PName>
+                            </Wrapper>
+                            <Wrapper>
+                                <PImage></PImage>
+                                <PName>Person</PName>
+                            </Wrapper>
+                            <Wrapper>
+                                <PImage></PImage>
+                                <PName>Person</PName>
+                            </Wrapper>
+                        </PersonContainer>
+                    </Participants>
                 </EventTagList>
             </EventDetail>
         </EventComponent>
