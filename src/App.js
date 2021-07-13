@@ -13,8 +13,6 @@ import Login from './components/Login'
 import Register from './components/Register'
 import Profile from './components/Profile'
 import Welcome from './components/Welcome'
-import Search from './components/Search'
-import Event from './components/Event'
 
 function App() {
   // state holds user data if the user is logged in
@@ -58,7 +56,7 @@ function App() {
         />
       </header>
 
-      <Search />
+      
 
       <div className="App">
         <Switch>
