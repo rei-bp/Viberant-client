@@ -1,9 +1,19 @@
 // import { useState } from 'react'
 import styled, {} from 'styled-components'
-import location from '../img/location.png'
+// import location from '../img/location.png'
 
 const SearchDiv = styled.div `
     text-align: center;
+    margin: 50px auto;
+`
+
+const InputDiv = styled.input `
+    border: 2px solid #0FC3FC;
+    background-color: #DFF3FA;
+    border-radius: 10px;
+    padding: 3px 15px;
+    width: 350px;
+    margin: 2px;
 `
 
 
@@ -15,12 +25,12 @@ const Search = () => {
     return (
         <SearchDiv>
             <form>
-                <input
+                <InputDiv
                     id='search-input'
                     type='search'
                     placeholder= 'Search'
                 />
-                <input
+                <InputDiv
                     id='location-input'
                     type='location'
                     placeholder='Location'

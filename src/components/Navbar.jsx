@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import userImage from '../img/user.png'
+import ViberantLogo from '../img/ViberantLogo.png'
 
 
 const Nav = styled.nav `
     padding: 25px;
     display: flex;
     align-items: center;
+    background-color: #0FC3FC;
 `
 const Logo = styled.div `
     font-size: 2rem;
@@ -55,7 +57,7 @@ const Navbar = (props) => {
             </Link>
 
             <Link to="/register">
-                <ListElem>Register</ListElem>
+                <ListElem>Sign-up</ListElem>
             </Link>
         </Actions>
     )
@@ -63,7 +65,7 @@ const Navbar = (props) => {
     return (
         <Nav>
             <Logo>
-                Logo
+                <Link to ="/"><img src ={ViberantLogo} alt="viberant logo" width={230} height={50}></img></Link>
             </Logo>
 
             {props.currentUser ? loggedIn : loggedOut}

@@ -3,6 +3,58 @@ import axios from 'axios'
 import jwt from 'jsonwebtoken'
 import { Redirect } from 'react-router-dom'
 import Profile from './Profile'
+import styled from 'styled-components'
+
+const Logo = styled.div `
+    font-size: 2rem;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 20px;
+    padding-left: 75px;
+    padding-right: 50px;
+    background-color: lightgrey;
+    diplay: center;
+    width: 450px;
+    text: center;
+    `
+const Links = styled.li `
+    display: inline;
+    margin: 0 auto;
+    margin-right: 50px;
+    
+`
+const Inputs = styled.input `
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    width: 410px;
+    height: 25px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+`
+
+const LoginB = styled.input `
+    margin-top: 80px;
+    padding: 10px;
+    width: 200px;
+    background: white;
+`
+
+const ForgotP = styled.p `
+    margin-right: 260px;
+    padding: 10px;
+    text-decoration: underline;
+`
+
+const Radio = styled.input `
+    margin-right: 260px;
+    margin-left: -265px;
+`
+
+const RememberMe = styled.label `
+    margin-left: -250px;
+`
 
 const Login = (props) => {
     // state for the controlled form
@@ -49,13 +101,29 @@ const Login = (props) => {
 
     return (
         <div>
-            <h3>Login To Your Account:</h3>
+            <Logo>
+                Logo
+            </Logo>
+
+            <ul>
+                <Links>
+                    I have an account
+                </Links>
+
+                <Links>
+                    |
+                </Links>
+
+                <Links>
+                    I'm a new member
+                </Links>
+            </ul>
 
             <p>{message}</p>
 
             <form onSubmit={handleSubmit}>
-                <label htmlFor={'email-input'}>Email:</label>
-                <input
+                <label htmlFor={'email-input'}></label>
+                <Inputs
                     id='email-input'
                     type='email'
                     placeholder='user@domain.com'
@@ -63,8 +131,8 @@ const Login = (props) => {
                     value={email}
                 />
 
-                <label htmlFor={'password-input'}>Password:</label>
-                <input
+                
+                <Inputs
                     id='password-input'
                     type='password'
                     placeholder='Password'
@@ -72,11 +140,22 @@ const Login = (props) => {
                     value={password}
                 />
 
-                <input
+                <Radio
+                type="checkbox" 
+                id="html"  
+                value="HTML"
+                />
+                <RememberMe htmlFor={'html'}>Remember me</RememberMe>
+                <ForgotP>forgot password?</ForgotP>
+
+
+                <LoginB
                     type='submit'
                     value='Login'
                 />
             </form>
+
+            
         </div>
     )
 }
