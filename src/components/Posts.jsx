@@ -1,5 +1,4 @@
 import { useState, useEffect} from 'react'
-import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -7,13 +6,16 @@ const Posts = () => {
     const [post, setPost] = useState([])
 // map through the POST DB to display all posts with specific tags
     useEffect (() => {
-        fetch(`${process.env.REACT_APP_SERVER_URL}/api-v1/posts`)
-        .then(response => response.json())
-        .then(postsData => {
-            console.log(postsData)
-            setPost(postsData)
-        })
-        .catch(err => console.log(err))
+        const getAllPosts = async () => {
+            try {
+                const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/posts`)
+                console.log(response.data)
+                setPost(response.data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getAllPosts()
     }, [])
 
     let renderedPosts = []
@@ -21,7 +23,7 @@ const Posts = () => {
     if(post){
         renderedPosts = post.map((post, idx) => {
             return (
-                <div id={idx}>
+                <div key={idx}>
                     <h2>
                         {post.title}
                     </h2>
