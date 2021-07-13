@@ -165,7 +165,7 @@ const Wrapper = styled.div `
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 30px;
+    margin: 10px;
     height: 100px;
     width: 100px;
     padding: 15px;
