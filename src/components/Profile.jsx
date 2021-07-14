@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import Login from './Login'
 import NewPost from './NewPost'
+import { Form } from "react-bootstrap"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Profile = (props) => {
     // state is information from the server
@@ -38,30 +40,15 @@ const Profile = (props) => {
 
     // redirect if there is no user in state
     if(!props.currentUser) return <Redirect to='/login' component={ Login } currentUser={ props.currentUser } />
+    
+    console.log(props.currentUser)
+    console.log(props.currentUser.about)
 
-    // check if user has an about me, if they dont they should add one
-    // if (!props.currentUser.about) {
-    //     return (
-    //         // <>
-    //         //     <FloatingLabel controlId="floatingTextarea" label="Comments" className="mb-3">
-    //         //         <Form.Control as="textarea" placeholder="Leave a comment here" />
-    //         //     </FloatingLabel>
-    //         //     <FloatingLabel controlId="floatingTextarea2" label="Comments">
-    //         //         <Form.Control
-    //         //         as="textarea"
-    //         //         placeholder="Leave a comment here"
-    //         //         style={{ height: '100px' }}
-    //         //         />
-    //         //     </FloatingLabel>
-    //         // </>
-    //     )
-    // }
     return (
         <div>
             <h1 style={{textAlign: "left", margin: "50px 0px 100px 100px"}}><strong>{props.currentUser.name}</strong></h1>
             <div>
-                
-                <p>This is some stuff about you!</p>
+                <p>{props.currentUser.about}</p>
             </div>
             <div>
             <h1 style={{textAlign: "left", margin: "50px 0px 100px 100px", }}><strong>Your Events</strong></h1>
