@@ -98,6 +98,7 @@ function App() {
             }
           />
 
+          {/* TODO: Remove after NewPost component is implemented in USER PROFILE */}
           <Route
           path='/newpost'
           component={ NewPost}
