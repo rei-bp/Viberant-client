@@ -3,7 +3,6 @@ import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import Login from './Login'
 import NewPost from './NewPost'
-import { Form } from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Profile = (props) => {
@@ -26,7 +25,7 @@ const Profile = (props) => {
                 const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/auth-locked`, { headers: authHeaders })
 
                 // set state with the data from the server
-                setMessage(response.data.msg)
+                setMessage(response.data.about)
 
             } catch (error) {
                 console.log(error)
@@ -47,8 +46,8 @@ const Profile = (props) => {
     return (
         <div>
             <h1 style={{textAlign: "left", margin: "50px 0px 100px 100px"}}><strong>{props.currentUser.name}</strong></h1>
-            <div>
-                <p>{props.currentUser.about}</p>
+            <div style={{padding:"5px 40px", marginLeft: "15px", marginRight: "15px"}}>
+                <p>{message}</p>
             </div>
             <div>
             <h1 style={{textAlign: "left", margin: "50px 0px 100px 100px", }}><strong>Your Events</strong></h1>
