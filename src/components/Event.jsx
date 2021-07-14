@@ -1,4 +1,7 @@
 import styled from 'styled-components'
+import { useEffect } from 'react'
+import axios from 'axios'
+
 import LocationImg from '../img/location.png'
 
 const EventComponent = styled.div `
@@ -182,6 +185,24 @@ const PName = styled.div `
     font-size: 12px;
 `
 
+
+export default function Event () {
+    let posts
+    useEffect (() => {
+        const getAllPosts = async () => {
+            try {
+                posts = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/posts`)
+                console.log(posts)
+            } catch (err) {
+                console.log(err)
+            }
+        }
+        getAllPosts()
+    }, [])
+
+
+
+
 const Event = () => {
     return (
         <EventComponent className='container' style={{ margin: "0 auto"}}>
@@ -208,15 +229,15 @@ const Event = () => {
                     <JoinButton>JOIN THIS EVENT</JoinButton>
 
                     <Tags>
-                        <Tagbuttons>stasdfauff</Tagbuttons>
-                        <Tagbuttons>stuffst</Tagbuttons>
-                        <Tagbuttons>stuffstuff</Tagbuttons>
-                        <Tagbuttons>stuffa</Tagbuttons>
-                        <Tagbuttons>stuffasdfasasdf</Tagbuttons>
-                        <Tagbuttons>stuffasdfasdf</Tagbuttons>
-                        <Tagbuttons>stuff</Tagbuttons>
-                        <Tagbuttons>stuffas</Tagbuttons>
-                        <Tagbuttons>stfasdfasdf</Tagbuttons>
+                        <Tagbuttons>cute</Tagbuttons>
+                        <Tagbuttons>cuddly</Tagbuttons>
+                        <Tagbuttons>awesome</Tagbuttons>
+                        <Tagbuttons>allergic</Tagbuttons>
+                        <Tagbuttons>britishshorthair</Tagbuttons>
+                        <Tagbuttons>eyebleach</Tagbuttons>
+                        <Tagbuttons>boop</Tagbuttons>
+                        <Tagbuttons>furry</Tagbuttons>
+                        <Tagbuttons>dog</Tagbuttons>
                     </Tags>
 
                     <Participants>
@@ -265,5 +286,4 @@ const Event = () => {
         </EventComponent>
     )
 }
-
-export default Event
+}
