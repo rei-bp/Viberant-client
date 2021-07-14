@@ -88,7 +88,7 @@ const NewPost = (props) => {
 
                     <Form.Group controlId="formFile" className="mb-3">
                         <Form.Label>Event photo</Form.Label>
-                        <Form.Control type="file" onChange={e => setImgUrl(e.target.value)} value={imgUrl} />
+                        <Form.Control type="text" placeholder="Url here" onChange={e => setImgUrl(e.target.value)} value={imgUrl} />
                     </Form.Group>
                 
                 </Form>
