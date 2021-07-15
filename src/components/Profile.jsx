@@ -41,6 +41,8 @@ const Profile = (props) => {
     // redirect if there is no user in state
     if(!props.currentUser) return <Redirect to='/login' component={ Login } currentUser={ props.currentUser } />
     
+    console.log(props.currentUser)
+
     return (
         <div style={{marginLeft: "100px"}} >
             <h1 style={{textAlign: "left", margin: "50px 0px 100px"}}><strong>{props.currentUser.name}</strong></h1>
