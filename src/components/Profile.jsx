@@ -41,8 +41,6 @@ const Profile = (props) => {
     if(!props.currentUser) return <Redirect to='/login' component={ Login } currentUser={ props.currentUser } />
     
     console.log(props.currentUser)
-    console.log(props.currentUser.about)
-    console.log(props.currentUser.id)
 
     return (
         <div>
