@@ -4,6 +4,7 @@ import axios from 'axios'
 import Login from './Login'
 import NewPost from './NewPost'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Posts from "./Posts"
 
 const Profile = (props) => {
     // state is information from the server
@@ -43,14 +44,17 @@ const Profile = (props) => {
     console.log(props.currentUser)
 
     return (
-        <div>
-            <h1 style={{textAlign: "left", margin: "50px 0px 100px 100px"}}><strong>{props.currentUser.name}</strong></h1>
-            <div style={{padding:"5px 40px", marginLeft: "15px", marginRight: "15px"}}>
+        <div style={{marginLeft: "100px"}} >
+            <h1 style={{textAlign: "left", margin: "50px 0px 100px"}}><strong>{props.currentUser.name}</strong></h1>
+            <div style={{padding:"5px 40px", marginRight: "15px"}}>
                 <p>{message}</p>
             </div>
             <div>
-            <h1 style={{textAlign: "left", margin: "50px 0px 100px 100px", }}><strong>Your Events</strong></h1>
+                <h1 style={{textAlign: "left", margin: "50px 0px 100px", }}><strong>Your Events</strong></h1>
                 <NewPost {...props}/>
+            </div>
+            <div className="mt-5">
+                <Posts userId={props.currentUser.id} />
             </div>
         </div>
     )
