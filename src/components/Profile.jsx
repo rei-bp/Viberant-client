@@ -42,6 +42,7 @@ const Profile = (props) => {
     
     console.log(props.currentUser)
     console.log(props.currentUser.about)
+    console.log(props.currentUser.id)
 
     return (
         <div>
