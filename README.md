@@ -10,7 +10,7 @@ Tech stack you plan to use
         styled the front end using: Bootstrap, in-line CSS, styled-components, and html
     Express and Node are the frame works
 
-General Apporach
+General Approach
     On Friday, we figured out who our teams were and decided what roles which people would take in building project three.  Rei handled the backend components, George took the lead, and Andie and Becky handled the front end.  On Monday we met our UX team and spent the morning brainstorming ideas. We each came up with five ideas, presented to the team, and from there we picked our favorite one and ran with it.  
 
     While we waited for the UX team to design, we built out our site using miro.  Then we slowly built out components and potential schemas organized by using the GitHub kanban board.  Monday afternoon the UX team had designed the site and showed us their final idea.  We decided we would each just have a single branch to work from, George delegated out necessary jobs, once we completeed them we would send a pull requests, and pull from main.  Ultimately, our success was due to great communication and teamwork.  
